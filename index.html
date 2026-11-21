@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
 <title>NTSN DAYS 2</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{width:100%;height:100%;background:#000;overflow:hidden;touch-action:manipulation;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
@@ -638,6 +638,84 @@ html,body{width:100%;height:100%;background:#000;overflow:hidden;touch-action:ma
 .mi-list{text-align:left;margin:0 0 3vh 0;padding-left:1.6em;font-family:'Noto Sans JP',sans-serif;font-size:clamp(.8rem,1.8vw,1.05rem);line-height:1.8;}
 .mi-list li::marker{color:#ffd76a;font-weight:700;}
 .mi-start{min-width:40%;padding:1.2vh 2vw;font-size:clamp(.9rem,2vw,1.2rem);}
+
+/* ===== ポップUI（学祭コメディ風）：セリフウィンドウ・名前欄・履歴/Auto・次へ印 ===== */
+:root{--pop-navy:#1f2f5c;--pop-cream:#fff7e3;--pop-yellow:#ffd23f;--pop-orange:#ff8a2a;--pop-sky:#3bb5e6;}
+#di{background-color:var(--pop-cream) !important;background-image:radial-gradient(rgba(255,138,42,.12) 1.6px,transparent 2px);background-size:16px 16px;border:max(2.5px,.3vw) solid var(--pop-navy) !important;border-radius:1.9vw !important;box-shadow:max(4px,.45vw) max(4px,.45vw) 0 var(--pop-navy);top:2.2vw !important;padding:max(16px,2.6vw) 2vw 2.5vh 3.2vw !important;}
+#dt{font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN','Noto Sans JP',sans-serif !important;font-weight:700;color:var(--pop-navy) !important;letter-spacing:.03em;padding-right:7vw;}
+#nt{position:absolute !important;top:0;left:3.2vw;margin:0 !important;z-index:4;background:transparent !important;border:none !important;border-radius:0 !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN','Noto Sans JP',sans-serif !important;font-weight:900;font-size:1.9vw;letter-spacing:.16em;padding:.15vw 2.4vw .35vw !important;transform:rotate(-2deg);}
+#nt::before{content:"";position:absolute;inset:0;z-index:-1;background-color:var(--ntc,#f0d96a);border:max(2px,.24vw) solid var(--pop-navy);box-shadow:max(3px,.32vw) max(3px,.32vw) 0 var(--pop-navy);transform:skewX(-10deg);}
+#hist-btn{background:var(--pop-cream) !important;border:max(2px,.24vw) solid var(--pop-navy) !important;color:var(--pop-navy) !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;font-size:1.6vw !important;letter-spacing:.15em !important;padding:.5vh 1.8vw !important;border-radius:999px !important;box-shadow:max(2px,.24vw) max(2px,.24vw) 0 var(--pop-navy);min-height:36px;}
+#auto-btn{background:#fff !important;border:max(2px,.2vw) solid var(--pop-navy) !important;color:var(--pop-navy) !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;border-radius:999px !important;top:1.1vw !important;padding:.2vw 1.1vw !important;text-shadow:none !important;opacity:1 !important;}
+#auto-btn.active{background:var(--pop-yellow) !important;color:var(--pop-navy) !important;border-color:var(--pop-navy) !important;}
+#ni{width:1.7vw !important;height:1.45vw !important;min-width:14px;min-height:12px;border:none !important;transform:none !important;right:1.5vw !important;bottom:1vh !important;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 24'%3E%3Cpath d='M3 4h22L14 20z' fill='%23ff8a2a' stroke='%231f2f5c' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;animation:niBob .7s ease-in-out infinite alternate !important;}
+@keyframes niBob{from{transform:translateY(-2px);}to{transform:translateY(2px);}}
+/* ===== ポップUI：探索モード開始画面 ===== */
+#map-intro{background-color:rgba(30,42,82,.58) !important;background-image:radial-gradient(rgba(255,247,227,.16) 1.6px,transparent 2px);background-size:18px 18px;}
+#map-intro .mi-card{position:relative;box-sizing:border-box;width:min(640px,72vw);max-width:none;background:var(--pop-cream);border:max(3px,.32vw) solid var(--pop-navy);border-radius:clamp(18px,2vw,26px);box-shadow:clamp(5px,.62vw,8px) clamp(5px,.62vw,8px) 0 var(--pop-navy);padding:0 clamp(22px,3.4vw,44px) clamp(16px,2.6vw,34px);color:var(--pop-navy);text-align:left;transform:rotate(-1deg);display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.7vw,22px);font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN','Noto Sans JP',sans-serif;}
+#map-intro .mi-tape{position:absolute;width:clamp(60px,7.2vw,92px);height:clamp(16px,2vw,26px);transform:rotate(-38deg);border-left:2px dashed rgba(31,47,92,.25);border-right:2px dashed rgba(31,47,92,.25);}
+#map-intro .mi-tape.l{left:-14px;top:14px;background:rgba(255,196,64,.8);}
+#map-intro .mi-tape.r{right:-14px;bottom:20px;background:rgba(110,200,236,.75);}
+#map-intro .mi-band{margin-top:clamp(-34px,-2.6vw,-22px);background-color:var(--pop-orange);background-image:radial-gradient(rgba(255,255,255,.28) 1.8px,transparent 2.2px);background-size:12px 12px;border:max(3px,.32vw) solid var(--pop-navy);box-shadow:clamp(4px,.4vw,5px) clamp(4px,.4vw,5px) 0 var(--pop-navy);padding:clamp(5px,.8vw,10px) clamp(32px,4vw,52px) clamp(7px,.95vw,12px);transform:skewX(-10deg) rotate(-2deg);}
+#map-intro .mi-title{margin:0 !important;transform:skewX(10deg);font-size:clamp(26px,3.6vw,46px) !important;font-weight:900;letter-spacing:.14em !important;color:#fff !important;font-family:inherit !important;text-shadow:3px 3px 0 var(--pop-navy),-1px -1px 0 var(--pop-navy),1px -1px 0 var(--pop-navy),-1px 1px 0 var(--pop-navy);white-space:nowrap;}
+#map-intro .mi-head{display:inline-flex;align-items:center;padding:clamp(3px,.47vw,6px) clamp(16px,2vw,26px) !important;margin:0 !important;border:max(2px,.24vw) solid var(--pop-navy) !important;border-radius:999px;background:repeating-linear-gradient(-45deg,var(--pop-yellow) 0 10px,#ffc61a 10px 20px);font-family:inherit !important;font-size:clamp(12px,1.4vw,18px) !important;font-weight:900;letter-spacing:.22em !important;color:var(--pop-navy) !important;}
+#map-intro .mi-list{list-style:none;margin:0 !important;padding:0 !important;width:100%;display:flex;flex-direction:column;gap:clamp(7px,1.1vw,14px);counter-reset:mi;font-family:inherit !important;}
+#map-intro .mi-list li{counter-increment:mi;display:flex;align-items:center;gap:clamp(9px,1.1vw,14px);}
+#map-intro .mi-list li::before{content:counter(mi);flex:none;width:clamp(30px,3.6vw,46px);height:clamp(30px,3.6vw,46px);border-radius:50%;background:var(--pop-orange);border:max(2px,.24vw) solid var(--pop-navy);box-shadow:2px 2px 0 var(--pop-navy);display:flex;align-items:center;justify-content:center;font-size:clamp(16px,1.9vw,24px);font-weight:900;color:#fff;box-sizing:border-box;}
+#map-intro .mi-list li:nth-child(2n)::before{background:var(--pop-sky);}
+#map-intro .mi-list li{font-size:clamp(14px,1.56vw,20px);font-weight:800;line-height:1.5;color:var(--pop-navy);}
+#map-intro .mi-list li{background:none;}
+#map-intro .mi-list li > span,#map-intro .mi-list li{position:relative;}
+#map-intro .mi-list li{padding:0;}
+#map-intro .mi-list li::after{content:none;}
+#map-intro .mi-list li{border:none;}
+#map-intro .mi-start{display:inline-flex;align-items:center;gap:clamp(8px,1.1vw,14px);min-height:46px;padding:clamp(7px,1.1vw,14px) clamp(40px,4.7vw,60px) clamp(9px,1.25vw,16px);margin-top:4px;background:var(--pop-yellow);border:max(3px,.32vw) solid var(--pop-navy);border-radius:999px;box-shadow:0 clamp(4px,.47vw,6px) 0 var(--pop-navy);font-family:inherit;font-size:clamp(19px,2.2vw,28px);font-weight:900;letter-spacing:.3em;color:var(--pop-navy);cursor:pointer;touch-action:manipulation;}
+#map-intro .mi-start:active{transform:translateY(3px);box-shadow:0 2px 0 var(--pop-navy);}
+#map-intro .mi-start svg{width:clamp(16px,1.7vw,22px);height:clamp(16px,1.7vw,22px);}
+#map-intro .mi-item{flex:1;background:#fff;border:max(2px,.24vw) dashed rgba(31,47,92,.45);border-radius:clamp(12px,1.25vw,16px);padding:clamp(6px,.95vw,12px) clamp(12px,1.4vw,18px);}
+
+/* ===== ポップUI：TOP画面・チャプター選択 ===== */
+#title-screen,#chapter-screen{background:rgba(30,42,82,.42) radial-gradient(rgba(255,247,227,.16) 1.6px,transparent 2px) 0 0/18px 18px !important;}
+#title-screen #title-game-name,#chapter-screen #title-game-name{position:relative;z-index:0;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;color:#fff !important;letter-spacing:.1em !important;padding:.25em 1.2em .3em;transform:rotate(-2deg);text-shadow:-2px -2px 0 var(--pop-navy),2px -2px 0 var(--pop-navy),-2px 2px 0 var(--pop-navy),2px 2px 0 var(--pop-navy),.06em .07em 0 var(--pop-navy) !important;white-space:nowrap;}
+#title-screen #title-game-name{font-size:5.2vw !important;margin-bottom:5.5vh !important;}
+#title-screen #title-game-name::before,#chapter-screen #title-game-name::before{content:"";position:absolute;inset:0;z-index:-1;background-color:var(--pop-orange);border:max(3px,.32vw) solid var(--pop-navy);box-shadow:max(4px,.45vw) max(4px,.45vw) 0 var(--pop-navy);transform:skewX(-10deg);}
+#chapter-screen #title-game-name{margin-bottom:3.5vh !important;}
+#title-screen #title-sub:empty{display:none;}
+#title-screen #title-buttons,#chapter-screen #title-buttons{gap:2.4vh !important;}
+#title-screen .title-btn,#chapter-screen .title-btn{background:var(--pop-cream) !important;border:max(2.5px,.28vw) solid var(--pop-navy) !important;color:var(--pop-navy) !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;letter-spacing:.14em !important;border-radius:999px !important;box-shadow:0 max(4px,.45vw) 0 var(--pop-navy);min-height:44px;opacity:1 !important;transition:transform .08s,box-shadow .08s;}
+#title-screen .title-btn:active,#chapter-screen .title-btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--pop-navy);}
+#title-screen #btn-start{background:var(--pop-yellow) !important;}
+#chapter-screen .title-btn.chapter{font-size:1.9vw !important;}
+#chapter-screen #btn-back-title{background:#fff !important;font-size:1.6vw !important;}
+#app-version{color:rgba(255,247,227,.7) !important;}
+/* ===== ポップUI：選択肢 ===== */
+#choice-wrap{background:rgba(30,42,82,.5) radial-gradient(rgba(255,247,227,.14) 1.6px,transparent 2px) 0 0/18px 18px !important;gap:2.6vh !important;}
+.choice-btn{background:var(--pop-cream) !important;border:max(2.5px,.3vw) solid var(--pop-navy) !important;color:var(--pop-navy) !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:800;border-radius:1.6vw !important;box-shadow:max(4px,.45vw) max(4px,.45vw) 0 var(--pop-navy);min-height:44px;}
+.choice-btn:before{content:"▶ " !important;color:var(--pop-orange) !important;}
+.choice-btn:hover,.choice-btn:active{background:var(--pop-yellow) !important;}
+/* ===== ポップUI：場所名ラベル ===== */
+#sc{background:var(--pop-cream) !important;color:var(--pop-navy) !important;border:max(2px,.24vw) solid var(--pop-navy) !important;border-radius:999px !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;font-size:1.7vw !important;letter-spacing:.16em !important;box-shadow:max(2px,.24vw) max(2px,.24vw) 0 var(--pop-navy);}
+/* ===== ポップUI：履歴の一覧画面 ===== */
+#hist-overlay{background:var(--pop-cream) radial-gradient(rgba(255,138,42,.1) 1.6px,transparent 2px) 0 0/16px 16px !important;}
+#hist-header{border-bottom:max(2.5px,.28vw) solid var(--pop-navy) !important;background:#fff;}
+#hist-header span{position:relative;z-index:0;display:inline-block;color:#fff !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;letter-spacing:.16em !important;padding:.15em 1em .2em;margin-left:.6vw;transform:rotate(-2deg);text-shadow:-1px -1px 0 var(--pop-navy),1px -1px 0 var(--pop-navy),-1px 1px 0 var(--pop-navy),2px 2px 0 var(--pop-navy);}
+#hist-header span::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--pop-orange);border:max(2px,.24vw) solid var(--pop-navy);box-shadow:3px 3px 0 var(--pop-navy);transform:skewX(-10deg);}
+#hist-close{background:var(--pop-cream) !important;border:max(2px,.24vw) solid var(--pop-navy) !important;color:var(--pop-navy) !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;font-size:1.7vw !important;letter-spacing:.12em;border-radius:999px !important;padding:.6vh 2.4vw !important;box-shadow:max(2px,.24vw) max(2px,.24vw) 0 var(--pop-navy);}
+#hist-list{gap:0 !important;}
+.hist-item{padding:1.2vh 0;border-bottom:2px dashed rgba(31,47,92,.25);}
+.hist-speaker{font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900 !important;border:max(1.5px,.18vw) solid var(--pop-navy);border-radius:999px !important;padding:.1vh 1vw !important;margin-bottom:.4vh;}
+.hist-text{font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:700;color:var(--pop-navy) !important;}
+.hist-narrator{font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:700;color:#5b6787 !important;}
+/* ===== ポップUI：LINE画面（縦長画像）の「次へ」ボタン・ヒント ===== */
+#scroll-img-next{background:var(--pop-yellow) !important;border:max(2.5px,.28vw) solid var(--pop-navy) !important;color:var(--pop-navy) !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;border-radius:999px !important;box-shadow:0 max(3px,.35vw) 0 var(--pop-navy);min-height:44px;}
+#scroll-img-next:active{transform:translateY(3px);box-shadow:0 1px 0 var(--pop-navy);}
+#scroll-img-hint{background:var(--pop-cream) !important;border:max(2px,.24vw) solid var(--pop-navy) !important;color:var(--pop-navy) !important;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;}
+
+/* ===== ポップUI：場所表示（場面が変わるときのタイトル） ===== */
+#scene-intro .si-badge{padding:1.6vh 4.6vw 1.9vh !important;border:max(3px,.32vw) solid var(--pop-navy) !important;border-radius:0 !important;overflow:visible !important;background-color:var(--pop-orange);box-shadow:max(4px,.5vw) max(4px,.5vw) 0 var(--pop-navy);transform:skewX(-10deg) rotate(-2deg);animation:siPop .45s cubic-bezier(.2,1.4,.4,1) both;}
+#scene-intro .si-mist{display:none !important;}
+#scene-intro .si-label{transform:skewX(10deg);font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:900;font-size:3.6vw !important;letter-spacing:.2em !important;color:#fff !important;text-shadow:-2px -2px 0 var(--pop-navy),2px -2px 0 var(--pop-navy),-2px 2px 0 var(--pop-navy),2px 2px 0 var(--pop-navy),.07em .08em 0 var(--pop-navy) !important;}
+@keyframes siPop{from{opacity:0;transform:skewX(-10deg) rotate(-6deg) scale(.7);}to{opacity:1;transform:skewX(-10deg) rotate(-2deg) scale(1);}}
 </style>
 </head>
 <body>
@@ -751,7 +829,7 @@ html,body{width:100%;height:100%;background:#000;overflow:hidden;touch-action:ma
     <button id="next-search-btn">次へ進む ▶</button>
   </div>
   <div id="choice-wrap"></div>
-  <div id="map-ov"><div id="map-wrap"><div id="map-box"><img id="map-img" alt="" draggable="false"><svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg></div><div id="map-panel"><div id="mp-clock"><div class="mp-clock-lbl">残り時間</div><div id="mp-time"><span id="mp-time-num">60</span><small>分</small></div></div><div id="mp-cur"></div><div id="mp-detail"></div></div></div><div id="map-intro"><div class="mi-card"><div class="mi-title" id="mi-title"></div><div class="mi-head" id="mi-head"></div><ol class="mi-list" id="mi-list"></ol><button class="mp-btn go mi-start" id="mi-start">スタート</button></div></div></div>
+  <div id="map-ov"><div id="map-wrap"><div id="map-box"><img id="map-img" alt="" draggable="false"><svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg></div><div id="map-panel"><div id="mp-clock"><div class="mp-clock-lbl">残り時間</div><div id="mp-time"><span id="mp-time-num">60</span><small>分</small></div></div><div id="mp-cur"></div><div id="mp-detail"></div></div></div><div id="map-intro"><div class="mi-card"><div class="mi-tape l" aria-hidden="true"></div><div class="mi-tape r" aria-hidden="true"></div><div class="mi-band"><div class="mi-title" id="mi-title"></div></div><div class="mi-head" id="mi-head"></div><ol class="mi-list" id="mi-list"></ol><button class="mi-start" id="mi-start">スタート<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3.5v17l15-8.5z" fill="#ff8a2a" stroke="#1f2f5c" stroke-width="2.4" stroke-linejoin="round"></path></svg></button></div></div></div>
   <div id="scroll-img-ov"><div id="scroll-img-box"><img id="scroll-img" alt="" draggable="false"></div><div id="scroll-img-hint">↕ スクロールできます</div><button id="scroll-img-next">次へ ▶</button></div>
   <div id="bang-overlay"><img id="bang-img" src="" alt="BANG"></div>
   <!-- 場所名中央表示 -->
@@ -1797,7 +1875,7 @@ function openMap(s,i){
       _mapState.busy=true;
       document.getElementById("mi-title").textContent=s.mapIntro.title||"";
       document.getElementById("mi-head").textContent=s.mapIntro.heading||"";
-      document.getElementById("mi-list").innerHTML=(s.mapIntro.items||[]).map(function(t){return "<li>"+t+"</li>";}).join("");
+      document.getElementById("mi-list").innerHTML=(s.mapIntro.items||[]).map(function(t){return "<li><span class=\"mi-item\">"+t+"</span></li>";}).join("");
       document.getElementById("map-intro").classList.add("show");
     }
   }
@@ -2090,7 +2168,7 @@ function go(i){
     sc.classList.add("h");
     if(s.speaker){
       var c2=NC[s.speaker]||{b:"#2a2040",t:"#e0d8f0"};
-      nt.textContent=s.speaker;nt.style.background=c2.b;nt.style.color=c2.t;
+      nt.textContent=s.speaker;nt.style.setProperty("--ntc",c2.b);nt.style.color=c2.t;
       nt.style.borderColor="#c8a830";nt.style.fontStyle=s.inner?"italic":"normal";
       nt.classList.remove("h");
     } else {nt.classList.add("h");}
@@ -2160,7 +2238,7 @@ function go(i){
   sc.classList.add("h");
   if(s.speaker){
     var c=NC[s.speaker]||{b:"#2a2040",t:"#e0d8f0"};
-    nt.textContent=s.speaker;nt.style.background=c.b;nt.style.color=c.t;
+    nt.textContent=s.speaker;nt.style.setProperty("--ntc",c.b);nt.style.color=c.t;
     nt.style.borderColor="#c8a830";nt.style.fontStyle=s.inner?"italic":"normal";
     nt.classList.remove("h");
   }else{nt.classList.add("h");}
